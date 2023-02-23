@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+/* ) Faça um algoritmo que leia o nome, o sexo e o estado civil de uma pessoa. Caso sexo seja “F” e
+estado civil seja “CASADA”, solicitar o tempo de casada (anos). 
+*/
+int main(void) {
+  char nome[100], pessoa[50], estado[50];
+  int aux, anos;
+  
+  printf("Digite o seu nome:\n");
+  scanf("%s", nome);
+
+  printf("Você é: mulher, homem ou evento?\n");
+  scanf("%s", pessoa);
+
+  if (strcmp(pessoa, "mulher") == 0) {
+    printf("Você é uma mulher casada?\n");
+    scanf("%s", estado);
+    if (strcmp(estado, "sim") == 0){
+      printf("Então você %s é uma mulher casada!\n", nome);
+    } else {
+      printf("Você %s, está encalhada!\n", nome);
+    } } 
+  
+  else if (strcmp(pessoa, "homem") == 0){
+    printf("Você é um homem casado?\n");
+   scanf("%s", estado);
+    if (strcmp(estado, "sim") == 0){
+      printf("Então você %s é um homem casado!\n", nome);
+    } else {
+      printf("Você %s, está encalhado!\n", nome);
+    }
+  } else {
+    printf("Você é o Coachella?\n");
+     scanf("%s", estado);
+     if (strcmp(estado, "sim") == 0){
+      printf("Então você %s é um evento bom\n", nome);
+    } else {
+      printf("Você %s, é o rock in rio!\n", nome);
+    }
+  }
+  return 0;
+}
