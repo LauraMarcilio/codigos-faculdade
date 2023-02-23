@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Coloque os nomes a serem sorteados, escolha um entre os nomes, e vai dar a opção de escolher se quer sortear 1, 2, 3, 4 ou 5 nomes.
+
+int main(void) {
+  int n, quantidade;
+  
+  printf("Digite a quantidade de pessoas: ");
+  scanf("%i", &quantidade);
+  
+  char nome[quantidade][100]; //aqui vai ter o nome das pessoa com no maximo 100 carac. com a quantidade max que a pessoa definiu
+
+  for (int i = 0; i < quantidade; i++) {
+
+    printf("Digite os nomes para serem sorteados:\n");
+    scanf("%s", nome[i]);
+  }
+  
+  printf("Nomes a serem sorteados: ");
+  scanf("%d", &n);
+  
+  switch (n){
+    case 1: //como é int não precisa da ''
+      printf("%s\n", nome[(rand()%quantidade)]); break;
+    case 2:
+      printf("%s\n%s\n", nome[(rand()%quantidade)], nome[(rand()%quantidade)]);
+      break;
+    case 3:
+      printf("%s\n%s\n%s\n", nome[(rand()%quantidade)], nome[(rand()%quantidade)], nome[(rand()%quantidade)]);
+      break;
+    case 4:
+    printf("%s\n%s\n%s\n%s\n", nome[(rand()%quantidade)], nome[(rand()%quantidade)], nome[(rand()%quantidade)], nome[(rand()%quantidade)]);
+      break;
+    case 5:
+    printf("%s\n%s\n%s\n%s\n%s\n", nome[(rand()%quantidade)], nome[(rand()%quantidade)], nome[(rand()%quantidade)], nome[(rand()%quantidade)], nome[(rand()%quantidade)]);
+     default:
+    printf("O programa não sorteia mais de 5 nomes, procure outro aplicativo.\n");
+  }
+
+  
+
+  
+  // return 0;
+}
