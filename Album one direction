@@ -1,0 +1,132 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void)
+{
+    char resp,inicio;
+    char cert='s';
+    char nome[40];
+    int medio=0,fácil=0,difícil=0,cont=0,nivel;
+    int certo_1=0,errado_1=0,contp_1=1,totp_1=1;
+    int certo_2=0,errado_2=0,contp_2=1,totp_2=1;
+    int certo_3=0,errado_3=0,contp_3=1,totp_3=1;
+
+    printf("\tONE DIRECTION MELHOR BANDA DO MUNDO.\n");
+    printf("\tPor favor informe seu nome e pressione ENTER.\n");
+    printf("\tSeu nome: ");
+    fgets(nome, 40, stdin);
+    // system("cls");
+    dificuldade:
+
+    printf("\t\n");
+    printf("\t%s\n", nome);
+    printf("\tVeja as opções:\n");
+    printf("\t\n");
+    printf("\t  1: Quiz: Você sabe mesmo sobre one direction?\n");
+    printf("\t  2: Turnês: Saiba mais sobre as turnês do one direction.\n");
+    printf("\t  3: Integrantes: Um pouco sobre os integrantes da banda.\n");
+    printf("\t\n\n");
+    printf("\t Escolha uma opção (1, 2 ou 3) e aperte ENTER. \n");
+    scanf("%d", &nivel);
+    system("cls");
+
+    switch (nivel)
+    {
+        case 1:
+            {
+                system("cls");
+                time_t tempo; struct tm*data;time(&tempo);
+                data =localtime(&tempo);
+                printf("\tVOCÊ ESCOLHEU O QUIZ\n");
+                printf("\t AS PERGUNTAS VALEM 2 PONTOS CADA\n");
+
+                getchar();printf("Precione ENTER para continuar...");
+                // getchar();system("cls");
+
+                
+                printf("\tPergunta de N. %.2d\n", contp_1++);
+                printf("\tEm que ano a banda foi formada?\n\n");
+                printf("\tA) 2009\n");
+                printf("\tB) 2010\n");
+                printf("\tC) 2011\n");
+                printf("\tD) 2012\n\n");
+                printf("\t Qual é a alternativa correta?\n\n");
+                scanf (" %s " , &resp);
+                 if ((resp=='B')||(resp='b'))
+               {
+                printf ("Resposta correta\n");
+                certo_1++;
+               }
+                else
+               {
+                printf ("Resposta errada\n");
+                printf ("Resposta correta: Letra \"B\"\n");
+                errado_1++;
+               }
+               
+               getchar(); printf("Precione a telca ENTER para continuar...");
+               getchar(); system("cls");
+               printf("\tPergunta de N. %.2d\n", contp_1++);
+               printf("\t Qual integrante sugeriu que a banda se chamasse one direction?\n");
+               printf("\tA) Liam Payne\n");
+               printf("\tB) Zayn Malik\n");
+               printf("\tC) Louis Tomlinson\n");
+               printf("\tD) Niall Horan\n");
+               printf("\tE) Harry Styles\n\n");
+               printf("\tQual é a alternativa correta?\n\n");
+               scanf(" %s " , &resp );
+
+               if ((resp=='E')||(resp=='e'))
+               {
+                   printf("\tResposta correta\n");
+                   certo_1++;
+               }
+               else
+               {
+                   printf ("Resposta errada\n");
+                printf ("Resposta correta: Letra \"D\"\n");
+                   errado_1++;
+               }
+
+            }
+
+
+}
+}
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int main() {
+//   char nome[100], album[100], cor[30], sim[3], não[3], pergunta[10];
+//   int x;
+//   printf("\tQUIZ DO ONE DIRECTION!\n");
+//   printf("Primeiro digite o seu nome para sabermos qual integrante você combina mais rsrs\n");
+//   scanf("%s", nome);
+  
+//   printf("%s, a primeira pergunta é: qual é sua cor favorita? azul, vermelho, roxo, verde ou preto? Digite sua resposta abaixo.\n", nome);
+//   scanf("%s", cor);
+  
+//   if (strcmp(cor, "vermelho") == 0) {
+//     printf("Você gosta de pombos?\n");
+//     scanf("%s", pergunta);
+
+//   if (strcmp(pergunta, "sim") == 0){
+//     printf("Conhece o kevin?\n");
+//     scanf("%s", pergunta);
+
+//   if (strcmp(pergunta, "sim") == 0){
+//   printf("Acho que já tenho uma ideia de quem você mais gosta, se prepare para a última pergunta! Quanto é 36+8?\n");
+//   scanf("%s", pergunta);
+
+//   if(strcmp(pergunta, "38") == 0){
+// printf("Você definitivamente é uma grande fã do Louis Tomlinson.\n");
+// }
+//   }
+//   } else /*aqui usa recursividade certo? pq vai chamar a parte q joga para o niall*/
+
+
+// }
+//   return 0;
+// }
