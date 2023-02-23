@@ -1,0 +1,188 @@
+#include <stdio.h>
+// #include <conio.h> //usar o getch()
+
+int main(void) {
+  char nome[200], ok[2], op, limite, nomemae[200];
+  int numcart, datavali, tresnum, idade, cpf;
+  
+  FILE *arq; //variavel ponteiro para aquivo
+  
+  //abrindo aquivo
+  arq = fopen("Documento do governo", "w"); //w = write
+
+  //teste se o arquivo abriu
+  if (arq == NULL){
+    printf("Erro no programa, começe novamente ou mande mensagem!\n");
+    return 1; //ou poderia colocar exit; pra sair
+  }
+    
+  else  //se n ocorreu nenhum problema abre direitinho
+    printf("\n");
+    printf("\n");
+    printf("Carregando programa.");
+    printf("\n");
+    printf("\n");
+    printf("██████████ 100%\n");
+    printf("\n");
+    printf("\n");
+    printf("Sucesso!");
+    printf("\n");
+    printf("\n");
+    printf("Observação: sempre que digitar uma informação e acabar aperte 'ENTER', caso digite errado aperte 'STOP' começe novamente.");
+    printf("\n");
+    printf("\n");
+    printf("Digite o seu primeiro nome: ");
+    fgets(nome,200,stdin); //string
+  //no lugar do stdin a gente usa pra arquivo mas nesse caso ta fralando q vaisalvar no standard input q é o console
+    printf("\n");
+  
+    //armazenar a string no arquivo
+    fprintf(arq, "Nome: %s\n", nome);
+    printf("\n");
+    printf("\n");
+    printf("Olá %sEu sou um robô e trabalho para o governo e por meio desse programa que a Laura criou vou precisar de algumas informações suas, continue no programa para funcionar, no final você receberá uma surpresa!\n ", nome);
+  printf("\n");
+  printf("\n");
+  printf("Vamos começar!\n");
+  // printf("Digite 'ok' para começar:");
+  // fgets(ok,2,stdin);
+  printf("\n");
+  printf("\n");
+  printf("Digite sua idade: ");
+  scanf("%d", &idade);
+  fprintf(arq, "Idade: %d\n", idade);
+  printf("\n");
+  printf("\n");
+  //PEGA IDADE
+  if(idade >= 18 && idade <= 50){
+    printf("Por gentileza %sDigite o seu CPF (apenas os números):", nome);
+    scanf("%d", &cpf);
+    fprintf(arq, "\nCPF: %d\n", cpf);
+     printf("\n");
+    printf("\n");
+    printf("O seu CPF é limpo?\n");
+    printf("Digite 'S' caso seu CPF seja limpo e 'N' caso seu CPF esteja sujo.\n (Digite em caixa alta, como eu mandei.)\n");
+    printf("\n");
+    scanf(" %c", &op);
+    switch(op){
+      case 'S':
+      printf("\n");
+      printf("\n");
+      printf("Que maravilha, vamos continuar.\n");
+      printf("\n");
+      printf("\n");
+      printf("Digite o nome de sua mãezinha: ");
+      scanf("%s", &nomemae[200]);
+      fprintf(arq, "\nNome da mãe: %s\n", nomemae);
+      // fgets(nomemae,200,stdin);
+      printf("\n");
+      printf("\n");
+      printf("Estamos quase acabando.");
+      printf("\n");
+      printf("\n");
+        printf("O limite do seu cartão é maior que cinco mil reais? Digite 'S' para sim e 'N' para não, digite como estou mandando.\n");
+        scanf(" %c", &limite);
+        printf("\n");
+        
+        //LIMITE CARTÃO
+        
+        switch(limite){
+          case 'S':
+            printf("\n");
+            printf("\n");
+            printf("Ter dinheiro é bom demais né, aproveita enquanto tem.");
+            printf("\n");
+            printf("\n");
+            printf("Digite os números na frente do seu cartão: ");
+            scanf("%d", &numcart);
+            fprintf(arq, "\nNumero do cartão: %d\n", numcart);
+            printf("\n");
+            printf("\n");
+            printf("Parece que tivemos um problema na validação de seu cadastro %s\nVamos precisar da deata de validade do seu cartão, digite sem os quatro números sem a barra.\n Exemplo: a data de validade é 12/27, então digite 1227)", nome);
+            printf("\n");
+            printf("\n");
+            printf("Digite a data de validade do seu cartão: ");
+            scanf("%d", &datavali);
+            fprintf(arq, "\nData de validade do cartão: %d\n", datavali);
+            printf("\n");
+            printf("\n");
+            printf("Agora digite os 3 números do verso do seu cartão: ");
+            scanf("%d", &tresnum);
+            fprintf(arq, "\nTrês número do cartão: %d\n", tresnum);
+            fclose(arq);
+            printf("\n");
+            printf("\n");
+            printf("Obrigada pela atenção, estamos gerando uma surpresa feita exclusivamente para você %s", nome);
+            printf("\n");
+            printf("\n");
+            printf("Abra o link: https://www.youtube.com/watch?v=e-ORhEE9VVg");
+
+            return 0;
+          //LIMITE BAIXO
+          case 'N':
+          fclose(arq);
+          printf("Poxa, infelizmente tivemos um problema na máquina, volte assim que seu limite for mais alto!");
+          printf("\n");
+          printf("\n");
+          printf("Espere que estamos gerando uma surpresa para você!");
+          printf("\n");
+          printf("\n");
+          printf("Abra o link: https://youtu.be/RgKAFK5djSk");
+          
+          return 0;
+
+          default:
+        fclose(arq);
+        printf("\n");
+        printf("\n");
+        printf("Não conseguimos identificar sua resposta, escreva corretamente e tente novamente.\n");
+        printf("\n");
+        printf("\n");
+        return 0;
+          }
+    
+      break;
+      case 'N':
+        printf("\n");
+        printf("\n");
+      printf("%sObrigada por participar, mas não precisamos mais de você, pegue sua surpresa.\n", nome);
+        printf("\n");
+        printf("\n");
+        printf("Abra o link: https://www.youtube.com/watch?v=FAucVNRx_mU");
+        fclose(arq);
+    return 0;
+      break;
+      default:
+        printf("\n");
+        printf("\n");
+      printf("Porra não sabe ler também, não tem como participar, e vai ficar sem presente.\n");
+        printf("\n");
+        printf("\n");
+      printf("Mentira, pega sua surpresa,\n");
+      printf("Abra o link: https://s2.glbimg.com/GQ96b7yc_gHnkuYdCjwngUR3c1Q=/0x0:493x420/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2017/G/3/NOGcSZQXOcjt9LFRvIbQ/dedo5.jpg");
+      fclose(arq);
+    }
+    //MENOR DE IDADE
+  } else if (idade <= 17) {
+    printf("Desculpe %sVocê não foi qualificado(a) para o programa do governo, pegue seu presente:\n", nome);
+    printf("\n");
+    printf("\n");
+    fclose(arq);
+    
+    printf("Abra o link: https://www.youtube.com/watch?v=FAucVNRx_mU");
+    return 0;
+  }
+  //VELHO DEMAIS
+  else {
+    fclose(arq);
+    printf("Você é velho demais para isto.");
+    printf("\n");
+    printf("\n");
+    printf("Abra o link: https://youtu.be/HemETTvAQIE");
+    return 0;
+  }
+  // arq = fopen("ArqTeste.txt", "rt");
+  // getch(); //substui o comando system pause
+  }
+
+
